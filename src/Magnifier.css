@@ -1,0 +1,22 @@
+.magnifier-canvas {
+  cursor: crosshair;
+}
+
+.magnifier {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.magnifier-color {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
