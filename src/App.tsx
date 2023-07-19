@@ -50,7 +50,26 @@ function App() {
     image.src = img as string;
 
     image.onload = () => {
-      ctx?.drawImage(image, 0, 0);
+      const canvasWidth = canvas.width;
+      const canvasHeight = canvas.height;
+      const imageWidth = image.width;
+      const imageHeight = image.height;
+
+      // Calculate the scaling factor
+      const scaleX = canvasWidth / imageWidth;
+      const scaleY = canvasHeight / imageHeight;
+      const scale = Math.min(scaleX, scaleY);
+
+      // Calculate the resized dimensions
+      const resizedWidth = imageWidth * scale;
+      const resizedHeight = imageHeight * scale;
+
+      // Calculate the center coordinates
+      const centerX = canvasWidth / 2 - resizedWidth / 2;
+      const centerY = canvasHeight / 2 - resizedHeight / 2;
+
+      ctx?.clearRect(0, 0, canvas.width, canvas.height);
+      ctx?.drawImage(image, centerX, centerY, resizedWidth, resizedHeight);
     };
 
     return () => {
@@ -124,7 +143,12 @@ function App() {
             onMouseMove={handleCanvasMouseMove}
             width={500}
             height={300}
-            style={{ objectFit: "cover" }}
+            style={{
+              objectFit: "cover",
+              border: "4px solid #FDF7E5",
+              borderStyle: "dashed",
+              borderRadius: 16,
+            }}
             ref={canvasRef}
             onClick={handleCanvasClick}
           />
