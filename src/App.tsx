@@ -8,11 +8,11 @@ import useEyeDropper from "use-eye-dropper";
 
 function App() {
   const [img, setImg] = useState<string>();
-  const [currentColor, setCurrentColor] = useState<string>("No Color");
+  const [currentColor, setCurrentColor] = useState<string>("No Color Picked");
   const [palette, setPalette] = useState<string[]>([]);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  const isFirstRender = currentColor === "No Color";
+  const isFirstRender = currentColor === "No Color Picked";
   const lightContrast = !isFirstRender && getContrast(currentColor, "#FFFF");
   const darkContrast = !isFirstRender && getContrast(currentColor, "#212121");
 
@@ -182,8 +182,8 @@ function App() {
   }
 
   return (
-    <div className="flex flex-col h-screen items-center justify-center max-w-6xl mx-auto py-10 px-4 scrollbar-thin scrollbar-thumb-neutral-200 scrollbar-track-neutral-400  dark:scrollbar-thumb-neutral-700 dark:scrollbar-track-neutral-900">
-      <div className="text-white font-bold text-2xl p-3 mb-4">
+    <div className="flex flex-col items-center justify-center h-screen max-w-6xl px-4 py-10 mx-auto scrollbar-thin scrollbar-thumb-neutral-200 scrollbar-track-neutral-400 dark:scrollbar-thumb-neutral-700 dark:scrollbar-track-neutral-900">
+      <div className="p-3 mb-4 text-2xl font-bold text-white">
         Press Ctrl + V to paste an image
       </div>
       <div className="grid grid-flow-col auto-cols-max gap-40 max-[1250px]:grid-flow-row max-[1250px]:auto-rows-max max-[1250px]:gap-8">
@@ -224,7 +224,7 @@ function App() {
               </span>
               <label
                 htmlFor="fileInput"
-                className="bg-blue-400 hover:bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold cursor-pointer transition-all"
+                className="px-4 py-2 font-semibold text-white transition-all bg-blue-400 rounded-lg cursor-pointer hover:bg-blue-500"
               >
                 Upload File
               </label>
@@ -238,45 +238,48 @@ function App() {
           )}
         </div>
         <div>
-          <div className="text-white text-2xl font-semibold mb-2">Color</div>
+          <div className="mb-2 text-2xl font-semibold text-white">Color</div>
           <div
             style={{
               backgroundColor: !isFirstRender ? currentColor : "#FDF7E5",
               color: !isFirstRender ? foregroundColor : "#212121",
             }}
-            className="p-16 px-32 rounded-xl flex items-center justify-center relative"
+            className="relative flex items-center justify-center p-16 px-32 rounded-xl"
           >
-            <div className="absolute top-3 right-3 flex items-center justify-center gap-4">
-              <button
-                onClick={handleReset}
-                style={{
-                  borderColor: foregroundColor,
-                }}
-                className={`hover:opacity-70 border-2 rounded-lg px-3`}
-              >
-                Reset
-              </button>
-              <BsFillGearFill size={20} />
+            <div className="absolute flex items-center justify-center gap-4 top-3 right-3">
+              {!isFirstRender && (
+                <>
+                  <button
+                    onClick={handleReset}
+                    style={{
+                      borderColor: foregroundColor,
+                    }}
+                    className={`hover:opacity-70 border-2 rounded-lg px-3`}
+                  >
+                    Reset
+                  </button>
+                  <BsFillGearFill size={20} />
+                </>
+              )}
             </div>
             <span className="text-3xl min-w-[120px] text-center">
               {currentColor}
             </span>
           </div>
           <div>
-            <div className="text-white text-2xl font-semibold mb-2 mt-4">
-              Palette
+            <div className="mt-4 mb-2 text-2xl font-semibold text-white">
+              Predominant Palette
             </div>
             <ColorExtractor getColors={(colors) => setPalette(colors)}>
               <img className="hidden" src={img} />
             </ColorExtractor>
             <div className="flex items-center justify-center bg-[#FDF7E5] rounded-lg px-4 py-2 min-w-[465px] min-h-[88px]">
-              {/* Think Later */}
               {palette.length !== 0 ? (
                 palette.map((color) => (
                   <button
                     key={color}
                     style={{ backgroundColor: color }}
-                    className="p-7 m-2 rounded-lg"
+                    className="m-2 rounded-lg p-7"
                     onClick={() => {
                       setCurrentColor(color);
                       copyToClipboardButton(color);
