@@ -101,8 +101,6 @@ export default function ColorPicker(): JSX.Element {
     copyToClipboard(hexColor);
   };
 
-  // MAGNIFIER
-
   const handleCanvasMouseEnter = () => {
     setShowMagnifier(true);
   };

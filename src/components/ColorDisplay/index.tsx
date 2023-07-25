@@ -82,6 +82,12 @@ export default function ColorDisplay({
         <span className={`text-3xl min-w-[150px] text-center`}>
           {currentColor}
         </span>
+        <div className="absolute font-semibold bottom-1 right-3">
+          {!isFirstRender &&
+            (foregroundColor === "#FFFF"
+              ? "Foreground: Light"
+              : "Foreground: Dark")}
+        </div>
       </div>
     </>
   );

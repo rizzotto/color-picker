@@ -25,9 +25,9 @@ export default function Palette({ img }: Props) {
         } flex items-center justify-center bg-[#FDF7E5] border-2 border-[#212121] rounded-lg px-4 py-2 min-h-[94px]`}
       >
         {palette.length !== 0 ? (
-          palette.map((color) => (
+          palette.map((color, i) => (
             <button
-              key={color}
+              key={`${color}-${i}`}
               style={{ backgroundColor: color }}
               className="m-2 rounded-lg p-7"
               onClick={() => {
