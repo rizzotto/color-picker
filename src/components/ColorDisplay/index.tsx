@@ -64,7 +64,7 @@ export default function ColorDisplay({
                 </button>
 
                 {showPopover && (
-                  <div ref={ref} className="absolute right-[-8px] top-8">
+                  <div ref={ref} className="absolute right-[-8px] top-8 z-10">
                     <Chrome
                       color={currentColor}
                       placement={"TR" as any}
@@ -82,7 +82,7 @@ export default function ColorDisplay({
         <span className={`text-3xl min-w-[150px] text-center`}>
           {currentColor}
         </span>
-        <div className="absolute font-semibold bottom-1 right-3">
+        <div className="absolute font-semibold bottom-1 right-3 ">
           {!isFirstRender &&
             (foregroundColor === "#FFFF"
               ? "Foreground: Light"
