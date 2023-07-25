@@ -93,7 +93,7 @@ export default function ColorPicker(): JSX.Element {
     const y = event.nativeEvent.offsetY;
 
     const pixelData = ctx.getImageData(x, y, 1, 1).data;
-    const [red, green, blue, alpha] = pixelData;
+    const [red, green, blue] = pixelData;
 
     const hexColor = rgbToHex(red, green, blue);
 
