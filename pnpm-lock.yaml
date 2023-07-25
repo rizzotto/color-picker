@@ -5,6 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@sjblurton/use-media-query':
+    specifier: ^0.1.0
+    version: 0.1.0(react@18.2.0)
+  '@uiw/color-convert':
+    specifier: ^1.3.3
+    version: 1.3.3(@babel/runtime@7.22.6)
+  '@uiw/react-color-chrome':
+    specifier: ^1.3.3
+    version: 1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0)
   node-vibrant:
     specifier: 3.2.1-alpha.1
     version: 3.2.1-alpha.1
@@ -20,6 +29,9 @@ dependencies:
   react-color-extractor:
     specifier: ^1.1.2
     version: 1.1.2(react@18.2.0)
+  react-cool-onclickoutside:
+    specifier: ^1.7.0
+    version: 1.7.0(react@18.2.0)
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
@@ -32,9 +44,6 @@ dependencies:
   react-palette:
     specifier: ^1.0.2
     version: 1.0.2(react-dom@18.2.0)(react@18.2.0)
-  use-eye-dropper:
-    specifier: ^1.5.0
-    version: 1.5.0(react@18.2.0)
 
 devDependencies:
   '@types/react':
@@ -753,6 +762,25 @@ packages:
       fastq: 1.15.0
     dev: true
 
+  /@sjblurton/use-event-listener@0.1.0(react@18.2.0):
+    resolution: {integrity: sha512-ETl00l8Kcg4NsNP+HrdINxNzsnAzXeh6LHKPkcWc/qOnkRVvfjErvK+X9IMOZViXVXilr8ma2R1Z9MoKoOEEsA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
+  /@sjblurton/use-media-query@0.1.0(react@18.2.0):
+    resolution: {integrity: sha512-KPnzKFVUfZflU7rEdeXhHImxRadWZPxOft8bJetS4Q9BM3aO+lVTowyuk8lAZ3S8Xe7L9/p3c0WXHWOAgS3x2A==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      '@sjblurton/use-event-listener': 0.1.0(react@18.2.0)
+      react: 18.2.0
+    dev: false
+
   /@tokenizer/token@0.3.0:
     resolution: {integrity: sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A==}
     dev: false
@@ -928,6 +956,155 @@ packages:
       '@typescript-eslint/types': 5.61.0
       eslint-visitor-keys: 3.4.1
     dev: true
+
+  /@uiw/color-convert@1.3.3(@babel/runtime@7.22.6):
+    resolution: {integrity: sha512-lCnDyNnHEYY1flsjSBkTodrEUG/YemWrzSwr7r7h8ZZdjk0RRMdIwbgMerOEODYQDh8vtoaorbJncshJ2Z2CSQ==}
+    peerDependencies:
+      '@babel/runtime': '>=7.19.0'
+    dependencies:
+      '@babel/runtime': 7.22.6
+    dev: false
+
+  /@uiw/react-color-alpha@1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-GmK/Dyj5TlLzt5Epcwry+9K4BPsqyPPhV09rsKKyiVa+/4XHRQRj97fjJ0GHgae6+71BPoIC9ulAR/VnmK3lrg==}
+    peerDependencies:
+      '@babel/runtime': '>=7.19.0'
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      '@babel/runtime': 7.22.6
+      '@uiw/color-convert': 1.3.3(@babel/runtime@7.22.6)
+      '@uiw/react-drag-event-interactive': 1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@uiw/react-color-chrome@1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-M/+svpgxmOVO/S/Nh0i/9ZWa+ATr+5DSYXGl5Ki/YvviyvBW4pHRmjXkOuL6j1U82xrxnOgxJVy2KJqVibMFPg==}
+    peerDependencies:
+      '@babel/runtime': '>=7.19.0'
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      '@babel/runtime': 7.22.6
+      '@uiw/color-convert': 1.3.3(@babel/runtime@7.22.6)
+      '@uiw/react-color-alpha': 1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0)
+      '@uiw/react-color-editable-input': 1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0)
+      '@uiw/react-color-editable-input-hsla': 1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0)
+      '@uiw/react-color-editable-input-rgba': 1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0)
+      '@uiw/react-color-github': 1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0)
+      '@uiw/react-color-hue': 1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0)
+      '@uiw/react-color-saturation': 1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@uiw/react-color-editable-input-hsla@1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-9bvzRLMZudIcGjs6R2K5M9W1Hj23gMuiZFKErneJ+QqxrFtZ2da/jMyfFUAfLA9fI4c6EaqKsKYuEKTu62jW8w==}
+    peerDependencies:
+      '@babel/runtime': '>=7.19.0'
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      '@babel/runtime': 7.22.6
+      '@uiw/color-convert': 1.3.3(@babel/runtime@7.22.6)
+      '@uiw/react-color-editable-input-rgba': 1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@uiw/react-color-editable-input-rgba@1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-FtbBLAQHHaNHM0ksagi6wCYV9rNjVI66cVHmzfMFtUm7XlXROSD5WTZsNJShY7o5yYcwWPTxACnKe7IXCdK4Eg==}
+    peerDependencies:
+      '@babel/runtime': '>=7.19.0'
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      '@babel/runtime': 7.22.6
+      '@uiw/color-convert': 1.3.3(@babel/runtime@7.22.6)
+      '@uiw/react-color-editable-input': 1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@uiw/react-color-editable-input@1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-n7RrVxpIDBueqCfwpx1zaKTqdk5DWTKWNii1NErM7VlLa2PSA2zZrdMeB8JkhwQAgCPKvEfv2f67tO5wkY/uTg==}
+    peerDependencies:
+      '@babel/runtime': '>=7.19.0'
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      '@babel/runtime': 7.22.6
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@uiw/react-color-github@1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-D6qc594DUg6ZZ1Ap2pDrxS/WtAwB3f4s3qFWP1T/Ylfpuoq0OuR3xJJzi7Y73h1tdLuQ598g86kwU0w298tHqw==}
+    peerDependencies:
+      '@babel/runtime': '>=7.19.0'
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      '@babel/runtime': 7.22.6
+      '@uiw/color-convert': 1.3.3(@babel/runtime@7.22.6)
+      '@uiw/react-color-swatch': 1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@uiw/react-color-hue@1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-TywdH89nxRG3pVmUTOzyEzg6nI0EI8VSA6Vh0Uh+gGZZQjgDM1ptCa7V5KyeKEfWCvaeo3RBAHPijFOKQrHqow==}
+    peerDependencies:
+      '@babel/runtime': '>=7.19.0'
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      '@babel/runtime': 7.22.6
+      '@uiw/color-convert': 1.3.3(@babel/runtime@7.22.6)
+      '@uiw/react-color-alpha': 1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@uiw/react-color-saturation@1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-gQNPaYgGbvE0Hq4pJjUNOfYuYFSV9QSWwPC23l9R/0WKdHci3ObHk8rycAkg9C6muV1ttBicqt9zqDVSwRHPrw==}
+    peerDependencies:
+      '@babel/runtime': '>=7.19.0'
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      '@babel/runtime': 7.22.6
+      '@uiw/color-convert': 1.3.3(@babel/runtime@7.22.6)
+      '@uiw/react-drag-event-interactive': 1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@uiw/react-color-swatch@1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-4RPHZO4mNmCLhbGoeCltauuGJSrSu15aR9mmUxa4gn8VdlnlxmWCG+Kq0jRQAN/pgvWuHbItYVR6a96TAq1UPA==}
+    peerDependencies:
+      '@babel/runtime': '>=7.19.0'
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      '@babel/runtime': 7.22.6
+      '@uiw/color-convert': 1.3.3(@babel/runtime@7.22.6)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@uiw/react-drag-event-interactive@1.3.3(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-dHHr19i4sa21bTFAd5xufsSYGCDqLBttIRmfQSzIpI18NtjmxKVCGyPL0ysxinWBjFomTUczszY4+fTOXnq1jQ==}
+    peerDependencies:
+      '@babel/runtime': '>=7.19.0'
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      '@babel/runtime': 7.22.6
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /@vibrant/color@3.2.1-alpha.1:
     resolution: {integrity: sha512-cvm+jAPwao2NerTr3d1JttYyLhp3eD/AQBeevxF7KT6HctToWZCwr2AeTr003/wKgbjzdOV1qySnbyOeu+R+Jw==}
@@ -2292,6 +2469,14 @@ packages:
       tinycolor2: 1.6.0
     dev: false
 
+  /react-cool-onclickoutside@1.7.0(react@18.2.0):
+    resolution: {integrity: sha512-HVZK2155Unee+enpoHKyYP2UdQK69thw90XAOUCjvJBcgRSgfRPgWWt/W1dYzoGp3+nleAa8SJxF1d4FMA4Qmw==}
+    peerDependencies:
+      react: '>= 16.8.0'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /react-dom@18.2.0(react@18.2.0):
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
     peerDependencies:
@@ -2694,14 +2879,6 @@ packages:
     dependencies:
       punycode: 1.4.1
       qs: 6.11.2
-    dev: false
-
-  /use-eye-dropper@1.5.0(react@18.2.0):
-    resolution: {integrity: sha512-Sg9llCaymuIcEl7t7zFc2/DJW6h+e/9MrwswHt6bYiNfAnK/2UpaOlHqWKf+APAz08ADCVP+9CI1hqsGVO0+Mw==}
-    peerDependencies:
-      react: ^0.13.0 || ^0.14.0 || >=15
-    dependencies:
-      react: 18.2.0
     dev: false
 
   /utif@2.0.1:
